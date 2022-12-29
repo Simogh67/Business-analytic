@@ -1,5 +1,10 @@
 # Business-Analytics
+## Project Summary 
+The goal of this repository is to present an end-to-end process to organize and analyze a dataset. Our dataset belongs to a bike-sharing program that allows riders to use a mobile application to unlock a bike at stations. Our dataset consists of information about trips, customers, stations, and customers' payments. First, to organize the data, we create a database in the form of star schema and ETL pipeline. Then, we provide comprehensive business analytics about the dataset. The dataset is included in this repository. 
+## Database Schema 
+To establish our schema, based on the given dataset, we create the fact and dimension tables as follows:
 
+![Star Schema](snow.jpg)
 ## Analyzing Trip Dataset 
 
 - Here, some business insights from the trip dataset are provided via SQL. 
@@ -24,7 +29,7 @@ Thursday    | 1746476       |  14.401194000313343  |121273
 Monday|1496599|15.783745873717294|94819
 Wednesday|1449917|14.485987751146457|100091
 Tuesday|1423223|14.554465874460556|97786
-- **Business insight: From the above table, mostly, our app is used during the weekend. This suggests that the customers used our bikes for leisure activity during weekends.**  
+- **Business insight: From the above table, mostly, our app is used during the weekend. This suggests that the customers used our product for leisure activity during weekends.**  
 - **Business question: At what time of the day is our program used the most (top 5)?**:
 
 ```
@@ -46,7 +51,7 @@ limit 5
 Saturday      |  14      | 12990
 Saturday   | 13       |  12954 
 Saturday|12|12605
-- **Business insight: we can observe that Saturday 12-14 pm and Friday 17pm are among the top 5, which confirms our previous insight i.e. customers use our app for leisure activity in their spare time. Interestingly, Thursday at 17pm is the rank first, which suggests that most likely our customers used the bikes to go home after the job. But, let's dig into our data and find top 5 stations, where our customers started their trip on Thursday at 17pm.**
+- **Business insight: we can observe that Saturday 12-14 pm and Friday 17pm are among the top 5, which confirms our previous insight i.e. customers use our app for leisure activity in their spare time. Interestingly, Thursday at 17pm is the rank first, which suggests that most likely our customers used the product to go home after the job. But, let's dig into our data and find top 5 stations, where our customers started their trip on Thursday at 17pm.**
 ```
 with t_1 as (select  ride_id,started_at, start_station_name,
 extract(hour from (started_at)) as start_hour,
@@ -67,8 +72,8 @@ limit 5
 | Clark St & Elm St | 117
 | Daley Center Plaza | 117
 | Millennium Park | 117 
-- **Bussiness recommendation: We can send promotions during weekends to encourage customers to use our app because our data suggests they are willing to use our app during weekends. Moreover, we can increase the number of bikes at the above stations to provide better service**.
-- **Business question: At which stations our bikes are highly demanded?**
+- **Bussiness recommendation: We can send promotions during weekends to encourage customers to use our app because our data suggests they are willing to use our app during weekends. Moreover, we can increase the number of product at the above stations to provide better service**.
+- **Business question: At which stations our product are highly demanded?**
 ```
 select start_station_name, count(start_station_name) as num_trip
 from trip
@@ -83,7 +88,7 @@ limit 5
 | Millennium Park | 7653
 | Wells St & Concord Ln |6939
 | Theater on the Lake | 6926
-- **Bussiness insight: The above stations generally are our main stations, where we may increase our bikes to improve our service.**
+- **Bussiness insight: The above stations generally are our main stations, where we may increase our product to improve our service.**
 - **Bussiness question: casual customers or member ones, which one is more active?**
 ```
 select member_casual, count(member_casual) as num_member
@@ -95,5 +100,23 @@ group by member_casual
 | :---       |     ---: | ---: |
 |causal |442054|18.49|
 | member | 380352|12.68|
-- **Business insight: As we can observe, the number of our casual customers is more than our members. Also, casual members spent more time with our bikes.**
-- **Business recommendation: The result implies that we couldn't convince our members to use our products more than causal customers. Therefore, we should focus on presenting more incentives to our customers.**
+- **Business insight: As we can observe, the number of our casual customers is more than our members. Also, casual members spent more time with our products.**
+- **Business recommendation: The result implies that we couldn't convince our members to use our products more than causal customers. Therefore, we should focus on presenting more incentives to our customers. Moreover, we should try to make our casual customers to members by sending promotions and discounts. To do this, first, we need to know at what time casual customers and members are mostly active, then we can send our promotions/discounts at that time to gain the maximum attention. Hopefully, this strategy leads to more efficient marketing.**
+```
+with t_1 as (select  ride_id,
+extract(hour from (started_at)) as usage_time
+from trip
+where member_casual='casual')
+select usage_time, count(usage_time) as num_usage_time
+from t_1
+group by usage_time
+order by num_usage_time desc
+```
+| hour | num_trip |
+| :---       |     ---: |
+|17 |38729
+| 18 | 37968
+| 16| 33377
+| 19 |31416
+| 15 | 30787
+- **Business recommendation: From 15-19 pm, our app has the maximum exposure by casual customers. Thus, we can send our discounts to them to encourage them to subscribe to our services. The same result is also obtained for members.** 
