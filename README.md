@@ -170,5 +170,5 @@ order by num_usage_time desc
 ![payment](pay-1.png) 
 The following figure illustrates the different behavior of casual customers and members. The figure shows the average payment amount versus days of the week over the last six years. Members spent more money on Thursday, Saturday, and Friday. However, casual members spent more money on Saturday, Tuesday, and Sunday. 
 ![payment](payday-1-1.png) 
-Finally, we explore the age of our customers. The chart expresses that most of the customers were born between 1985-2005. Thus, our customers are young. In conclusion, if we advertise our app through social networks, most likely we can gain better attention. 
+Finally, we explore the age of our customers. The chart expresses that most of the customers were born between 1985-2005. Thus, our customers are young. **In conclusion, if we advertise our app through social networks, most likely we can gain better attention.** 
 ![payment](age-1.png) 
