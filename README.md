@@ -1,10 +1,50 @@
 # Business-Analytics
 ## Project Summary 
-The goal of this repository is to present an end-to-end process to organize and analyze a dataset. Our dataset belongs to a bike-sharing program that allows riders to use a mobile application to unlock a bike at stations. Our dataset consists of information about trips, customers, stations, and customers' payments. First, to organize the data, we create a database in the form of star schema and ETL pipeline. Then, we provide comprehensive business analytics about the dataset. The dataset is included in this repository. 
+The goal of this repository is to present an end-to-end process to organize a dataset and provide business insights and analyses about the dataset. First, we create a schema to organize our data. Then, we present business analytics and insights from the dataset. Also, based on our findings, some business recommendations are suggested. The dataset belongs to a bike-sharing program that allows riders to use a mobile application to unlock a bike at different stations. Our dataset consists of information about trips, customers, stations, and customers' payments. To organize the data, we create a database in the form of star schema and ETL pipeline. Then, we provide comprehensive business analytics about the dataset. The dataset is included in this repository. 
 ## Database Schema 
 To establish our schema, based on the given dataset, we create the fact and dimension tables as follows:
 
 ![Star Schema](snow.jpg)
+
+To implement our schema, we apply the following steps: 
+- 1. the required tables are created as follows: 
+```
+create table if not exists payements (
+       payment_id int primary key, 
+       date timestamp, 
+       amount numeric , 
+       customer_id int,
+       FOREIGN KEY (customer_id) REFERENCES customers(customer_id))
+
+create table if not exists customers(
+       customer_id primary key,
+       name varchar,
+       surname varchar,
+       address text,
+       birth_date date,
+       start_date timestamp,
+       end_date timestamp,
+       member text)
+
+create table if not exists stations(
+       station_id primary key,
+       name text, 
+       latitude numeric, 
+       longitude numeric)
+       
+create table if not exists trips(
+       trip_id primary key,
+       bike_type varchar,
+       start_date timestamp,
+       end_date timestamp,
+       start_station text,
+       end_station text,
+       customer_id int,
+       FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+       FOREIGN KEY (start_station) REFERENCES stations(station_id),
+       FOREIGN KEY (end_station) REFERENCES stations(station_id))
+```
+- 2. Our data is imported to the created tables by using command  \copy target_table from '/path/to/local/filename.csv'. 
 ## Analyzing Trip Dataset 
 
 - Here, some business insights from the trip dataset are provided via SQL. 
@@ -30,7 +70,7 @@ Monday|1496599|15.783745873717294|94819
 Wednesday|1449917|14.485987751146457|100091
 Tuesday|1423223|14.554465874460556|97786
 - **Business insight: From the above table, mostly, our app is used during the weekend. This suggests that the customers used our product for leisure activity during weekends.**  
-- **Business question: At what time of the day is our program used the most (top 5)?**:
+- **Business question: At what time of the day our program is used the most (top 5)?**:
 
 ```
 with t_1 as (select  ride_id,started_at,
