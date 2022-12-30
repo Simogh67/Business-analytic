@@ -161,6 +161,11 @@ order by num_usage_time desc
 | 15 | 30787
 - **Business recommendation: From 15-19 pm, our app has the maximum exposure by casual customers. Thus, we can send our discounts to them to encourage them to subscribe to our services. The same result is also obtained for members.** 
 ## Data Visualization 
-
-
+- In this section, we provide business insights through data visualization via Power BI. 
+- First, we check in which regions our customers live. The figure below shows that most of them are from USA, Western Europe and Eastern South America.
+![payment](map-1.png) 
+- Second, we track the number of active customers per quarter and year. From, the below figure, it is clear that we could increase the number of customers year after year and quarter after quarter.
+![payment](customers-1.png) 
+- Third, we track the customer's payment amount per quarter and year. From the below figure, our sales increased monotonically year after year and quarter after quarter. Please note that only two months of the first quarter of 2022 are included in the dataset. Thus, the drop in 2022 is not a concern. 
 ![payment](pay-1.png) 
+
