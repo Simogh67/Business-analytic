@@ -168,5 +168,5 @@ order by num_usage_time desc
 ![payment](customers-1.png) 
 - Third, we track the customer's payment amount per quarter and year. From the below figure, our sales increased monotonically year after year and quarter after quarter. Please note that only two months of the first quarter of 2022 are included in the dataset. Thus, the drop in 2022 is not a concern. Both figures imply that our app has been growing steadily over the last six years.
 ![payment](pay-1.png) 
-The following figure illustrates the different behavior of casual customers and members. The figure shows the average payment amount versus days of the week over the last six years.
-[payment](pay-1-1.png) 
+The following figure illustrates the different behavior of casual customers and members. The figure shows the average payment amount versus days of the week over the last six years. Members spent more money on Thursday, Saturday, and Friday. However, casual members spent more money on Saturday, Tuesday, and Sunday. 
+![payment](payday-1-1.png) 
