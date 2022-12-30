@@ -160,5 +160,7 @@ order by num_usage_time desc
 | 19 |31416
 | 15 | 30787
 - **Business recommendation: From 15-19 pm, our app has the maximum exposure by casual customers. Thus, we can send our discounts to them to encourage them to subscribe to our services. The same result is also obtained for members.** 
+## Data Visualization 
 
-![payment](pay.pdf) 
+
+![payment](pay-1.png) 
