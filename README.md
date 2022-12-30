@@ -166,6 +166,7 @@ order by num_usage_time desc
 ![payment](map-1.png) 
 - Second, we track the number of active customers per quarter and year. From, the below figure, it is clear that we could increase the number of customers year after year and quarter after quarter.
 ![payment](customers-1.png) 
-- Third, we track the customer's payment amount per quarter and year. From the below figure, our sales increased monotonically year after year and quarter after quarter. Please note that only two months of the first quarter of 2022 are included in the dataset. Thus, the drop in 2022 is not a concern. 
+- Third, we track the customer's payment amount per quarter and year. From the below figure, our sales increased monotonically year after year and quarter after quarter. Please note that only two months of the first quarter of 2022 are included in the dataset. Thus, the drop in 2022 is not a concern. Both figures imply that our app has been growing steadily over the last six years.
 ![payment](pay-1.png) 
-
+The following figure illustrates the different behavior of casual customers and members. The figure shows the average payment amount versus days of the week over the last six years.
+[payment](pay-1-1.png) 
