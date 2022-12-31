@@ -172,5 +172,7 @@ The following figure illustrates the different behavior of casual customers and 
 ![payment](payday-1-1.png) 
 Fourth, we explore the age of our customers. The chart illustrates that most of the customers are between 20 years old to 35 years old. Thus, our customers are young. **In conclusion, if we advertise our app through social networks, most likely we can gain better attention.** 
 ![payment](age-1.png) 
-From the third figure, we already knew that a noticeable amount of our current customers started using our app recently. The below Donut chart shows that 50% of our customers started using our app less than 5 years ago. 
+From the third figure, we already know that a noticeable amount of our current customers started using our app recently. The below Donut chart shows that 50% of our customers started using our app less than 3 years ago. The figure admits that our app gets more attention recently.
 ![payment](contract_years-1.png) 
+ Next, we explore which type of our customers create money for us so far. 
+ **Business recommendation: The donut chart implies that customers with 3,4,2 years of membership are the most important customers. Also, we can observe that very old customers (with 9 years of membership) didn't generate a noticeable value over years. This shows that we have some clients who left the app despite the recent remarkable growth. Therefore, churn analysis is required and the marketing team should focus on reactivating those old customers. Also, the team should pay attention to the other old customers such as those with 8 or 7 years of membership to prevent them from churn.**  
