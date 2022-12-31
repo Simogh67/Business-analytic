@@ -168,12 +168,12 @@ order by num_usage_time desc
 ![payment](customers-1.png) 
 - Third, we track the customer's payment amount per quarter and year. From the below figure, our sales increased monotonically year after year and quarter after quarter. Please note that only two months of the first quarter of 2022 are included in the dataset. Thus, the drop in 2022 is not a concern. Both figures imply that our app has been growing steadily over the last nine years.
 ![payment](pay-1.png) 
-The following figure illustrates the different behavior of casual customers and members. The figure shows the average payment amount versus days of the week over the last nine years. Members spent more money on Thursday, Saturday, and Friday. However, casual members spent more money on Saturday, Tuesday, and Sunday. 
+- Fourth, we try to reveal the difference between casual customers' and members' behavior. The following figure illustrates the different behavior of casual customers and members. The figure shows the average payment amount versus days of the week over the last nine years. Members spent more money on Thursday, Saturday, and Friday. However, casual members spent more money on Saturday, Tuesday, and Sunday. 
 ![payment](payday-1-1.png) 
-Fourth, we explore the age of our customers. The chart illustrates that most of the customers are between 20 years old to 35 years old. Thus, our customers are young. **In conclusion, if we advertise our app through social networks, most likely we can gain better attention.** 
+- Fifth, we explore the age of our customers. The chart illustrates that most of the customers are between 20 years old to 35 years old. Thus, our customers are young. **In conclusion, if we advertise our app through social networks, most likely we can gain better attention.** 
 ![payment](age-1.png) 
-From the third figure, we already know that a noticeable amount of our current customers started using our app recently. The below Donut chart shows that 50% of our customers started using our app less than 3 years ago. The figure admits that our app gets more attention recently.
+From the third figure, we already know that a noticeable amount of our current customers started using our app recently. The below Donut chart shows that 50% of our customers started using the app less than 3 years ago. Consequently, our app gets more attention recently.
 ![payment](contract_years-1.png) 
- Next, we explore which type of the customers create more money for us so far. 
+ - Finally, we explore which type of the customers create more money for us so far. 
  **Business recommendation: The pie chart implies that customers with 3,4,2 years of membership are the most important customers. Also, we can observe that very old customers (with 9 years of membership) didn't generate a noticeable value over years. This shows that we have some clients who left the app despite the recent remarkable growth. Therefore, churn analysis is required and the marketing team should focus on reactivating those old customers. Also, the team should pay attention to the other old customers such as those with 8 or 7 years of membership to prevent them from churn.**  
 ![payment](percent-1.png)
