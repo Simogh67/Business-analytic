@@ -166,9 +166,11 @@ order by num_usage_time desc
 ![payment](map-1.png) 
 - Second, we track the number of active customers per quarter and year. From, the below figure, it is clear that we could increase the number of customers year after year and quarter after quarter.
 ![payment](customers-1.png) 
-- Third, we track the customer's payment amount per quarter and year. From the below figure, our sales increased monotonically year after year and quarter after quarter. Please note that only two months of the first quarter of 2022 are included in the dataset. Thus, the drop in 2022 is not a concern. Both figures imply that our app has been growing steadily over the last six years.
+- Third, we track the customer's payment amount per quarter and year. From the below figure, our sales increased monotonically year after year and quarter after quarter. Please note that only two months of the first quarter of 2022 are included in the dataset. Thus, the drop in 2022 is not a concern. Both figures imply that our app has been growing steadily over the last nine years.
 ![payment](pay-1.png) 
-The following figure illustrates the different behavior of casual customers and members. The figure shows the average payment amount versus days of the week over the last six years. Members spent more money on Thursday, Saturday, and Friday. However, casual members spent more money on Saturday, Tuesday, and Sunday. 
+The following figure illustrates the different behavior of casual customers and members. The figure shows the average payment amount versus days of the week over the last nine years. Members spent more money on Thursday, Saturday, and Friday. However, casual members spent more money on Saturday, Tuesday, and Sunday. 
 ![payment](payday-1-1.png) 
-Finally, we explore the age of our customers. The chart expresses that most of the customers were born between 1985-2005. Thus, our customers are young. **In conclusion, if we advertise our app through social networks, most likely we can gain better attention.** 
+Fourth, we explore the age of our customers. The chart illustrates that most of the customers are between 20 years old to 35 years old. Thus, our customers are young. **In conclusion, if we advertise our app through social networks, most likely we can gain better attention.** 
 ![payment](age-1.png) 
+From the third figure, we already knew that a noticeable amount of our current customers started using our app recently. The below Donut chart shows that 50% of our customers started using our app less than 5 years ago. 
+![payment](contract_years-1.png) 
