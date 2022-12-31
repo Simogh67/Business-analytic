@@ -1,4 +1,4 @@
-# Business-Analytics
+# Business-Analytic
 ## Project Summary 
 The goal of this repository is to present an end-to-end process to organize a dataset and provide advanced business insights and analytics about the dataset. First, we create a schema to organize our data. Then, we present business analytics and insights from the dataset. Also, based on our findings, some business recommendations are suggested. The dataset belongs to a bike-sharing program that allows riders to use a mobile application to unlock a bike at different stations. Our dataset consists of information about trips, customers, stations, and customers' payments. To organize the data, we create a database and ETL pipeline. Then, we provide comprehensive business analytics about the dataset.
 ## Database Schema 
