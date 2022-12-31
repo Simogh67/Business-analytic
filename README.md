@@ -1,13 +1,13 @@
 # Business-Analytics
 ## Project Summary 
-The goal of this repository is to present an end-to-end process to organize a dataset and provide business insights and analyses about the dataset. First, we create a schema to organize our data. Then, we present business analytics and insights from the dataset. Also, based on our findings, some business recommendations are suggested. The dataset belongs to a bike-sharing program that allows riders to use a mobile application to unlock a bike at different stations. Our dataset consists of information about trips, customers, stations, and customers' payments. To organize the data, we create a database in the form of star schema and ETL pipeline. Then, we provide comprehensive business analytics about the dataset. The dataset is included in this repository. 
+The goal of this repository is to present an end-to-end process to organize a dataset and provide advanced business insights and analytics about the dataset. First, we create a schema to organize our data. Then, we present business analytics and insights from the dataset. Also, based on our findings, some business recommendations are suggested. The dataset belongs to a bike-sharing program that allows riders to use a mobile application to unlock a bike at different stations. Our dataset consists of information about trips, customers, stations, and customers' payments. To organize the data, we create a database and ETL pipeline. Then, we provide comprehensive business analytics about the dataset, which is included in this repository. 
 ## Database Schema 
-To establish our schema, based on the given dataset, we create the fact and dimension tables as follows:
+Based on the given dataset, we propose the following schema to organize the data:
 
 ![Star Schema](snow.jpg)
 
 To implement our schema, we apply the following steps: 
-- 1. the required tables are created as follows: 
+- 1. the required tables are created  according to the proposed schema as follows: 
 ```
 create table if not exists payements (
        payment_id int primary key, 
