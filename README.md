@@ -45,7 +45,7 @@ create table if not exists trips(
        FOREIGN KEY (end_station) REFERENCES stations(station_id))
 ```
 - 2. Our data is imported to the created tables by using command  \copy target_table from '/path/to/local/filename.csv'. 
-## Trip Dataset Analytics 
+## Data Analysis:
 
 - Here, some business insights from the trip dataset are provided via SQL. 
 - **Business question: How much time is spent by our customers based on the day of the week**
@@ -177,3 +177,10 @@ From the third figure, we already know that a noticeable amount of our current c
  - Finally, we explore which type of the customers create more money for us so far. 
  The pie chart implies that customers with 3,4,2 years of membership are the most important customers. Also, we can observe that very old customers (with 9 years of membership) didn't generate a noticeable value over years. **Business recommendation: This shows that we have some clients who left the app despite the recent remarkable growth. Therefore, churn analysis is required and the marketing team should focus on reactivating those old customers. Also, the team should pay attention to the other old customers such as those with 8 or 7 years of membership to prevent them from churn.**  
 ![payment](percent-1.png)
+
+## Advanced Analytics: 
+In this section, based on customers’ purchase behaviors’, we predict how many purchases each customer will do over the next year, and calculate the expected profit for each customer. To end this, we leverage BG-NBD and Gamma-Gamma Models, which are statistical models (https://brucehardie.com/notes/004/bgnbd_spreadsheet_note.pdf). 
+
+The BG-NBD model models each customer’s purchase behaviors’ distribution and predict the expected number of purchases for each customer.  The model requires three pieces of information about each customer’s past
+purchasing history:his “recency” (when his last transaction occurred), “frequency” (how many transactions he made in a specified time period), and
+the length of time over which we have observed his purchasing behavior. The Gamma-Gamma model models the expected average profit distribution and predicts the expected average profit for each customer. Based on the output of the model, the customers are segmented into four different groups. Then, business insights and recommendations are provided regarding each group. 
