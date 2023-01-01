@@ -179,8 +179,11 @@ From the third figure, we already know that a noticeable amount of our current c
 ![payment](percent-1.png)
 
 ## Advanced Analytics: 
-In this section, based on customers’ purchase behaviors’, we predict how many purchases each customer will do over the next year, and calculate the expected profit for each customer. To end this, we leverage BG-NBD and Gamma-Gamma Models, which are statistical models (https://brucehardie.com/notes/004/bgnbd_spreadsheet_note.pdf). 
+In this section, based on customers’ purchase behaviors’, we predict how many purchases each customer will do over the next 6 months, and calculate the expected profit for each customer. To end this, we leverage BG-NBD and Gamma-Gamma Models, which are statistical models (https://brucehardie.com/notes/004/bgnbd_spreadsheet_note.pdf). 
 
 The BG-NBD model models each customer’s purchase behaviors’ distribution and predict the expected number of purchases for each customer.  The model requires three pieces of information about each customer’s past
 purchasing history:his “recency” (when his last transaction occurred), “frequency” (how many transactions he made in a specified time period), and
 the length of time over which we have observed his purchasing behavior. The Gamma-Gamma model models the expected average profit distribution and predicts the expected average profit for each customer. Based on the output of the model, the customers are segmented into four different groups. Then, business insights and recommendations are provided regarding each group. 
+
+The below chart illustrates, the expected average of purchases from four customer groups over the next six months. From the chart, group A is the most valuable customer because the gap between the aforementioned group and groups B and C is noticeable. It is expected that each customer in group A on average spend 522 $ over the next six months. However, customers in group D on average only spend 15 $. **Bussiness recommendation: the marketing team should try to reactivate customers group D by sending promotions and discounts. Also, they should try to intrigue customers in groups B and C to increase their app usage. Finally, they should monitor customers in group A, and pay attention to any change in their purchase pattern.** Next, we dig into the groups to draw meaningful insights from them.
+![payment](return-1.png)
