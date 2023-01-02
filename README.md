@@ -45,7 +45,7 @@ create table if not exists trips(
        FOREIGN KEY (end_station) REFERENCES stations(station_id))
 ```
 - 2. Our data is imported to the created tables by using command  \copy target_table from '/path/to/local/filename.csv'. 
-## Data Analysis:
+## Data Analysis with SQL:
 
 - Here, some business insights from the trip dataset are provided via SQL. 
 - **Business question: How much time is spent by our customers based on the day of the week**
