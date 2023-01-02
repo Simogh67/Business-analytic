@@ -237,10 +237,11 @@ group by 1
 2016|	27.66
 2017|	28.66
 2018	|29.57
-2019	|30.46	|41
+2019	|30.46
 2020	|31.5
 2021|	32.43
 
+**Business insight: From the above table, over recent years, the average age of the top 15% of customers is between 29-32 years.**
 ## Advanced Analytics: 
 In this section, based on customers’ purchase behaviors’, we predict how many purchases each customer will do over the next 6 months, and calculate the expected profit for each customer. To end this, we leverage BG-NBD and Gamma-Gamma Models, which are statistical models (https://brucehardie.com/notes/004/bgnbd_spreadsheet_note.pdf). 
 
