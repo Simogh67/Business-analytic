@@ -179,8 +179,8 @@ From the third figure, we already know that a noticeable amount of our current c
  The pie chart implies that customers with 3,4,2 years of membership are the most important customers. Also, we can observe that very old customers (with 9 years of membership) didn't generate a noticeable value over years. **Business recommendation: This shows that we have some clients who left the app despite the recent remarkable growth. Therefore, churn analysis is required and the marketing team should focus on reactivating those old customers. Also, the team should pay attention to the other old customers such as those with 8 or 7 years of membership to prevent them from churn.**  
 ![payment](percent-1.png)
 ## Advanced SQL: 
-In this part, we explore the customer data i.e. payments and riders dataset and provide insights about the customers via SQL queries. To end this, we leverage window functions, CTEs, and joins.  
-- **Business question: who are the top 3 customers each year?**
+In this part, we explore the customer data i.e. payments and riders datasets and provide insights about the customers via SQL queries. To end this, we leverage window functions, CTEs, and joins.  
+- **Business question: who is the top customer each year?**
  ```
 with t_1 as (select sum(amount) as sum_paid,extract(year from (date)) as year,
              customer_id
@@ -207,7 +207,40 @@ where rank=1
 240.48	|2019	|47057	|	Stephen |Nelson|41
 241.96	|2020	|19942	|Carlos|Haley|41
 241.68	|2021|	29549	|Amanda|Smith|30
-**Business insight: as we already know, the age of most customers is between 20 to 35. However, in some years the age of top customers was in the range of 40s. Next, we try to assess the importance of age with respect to the purchase amount. To do this, we consider the average age of the top and bottom 10% each year.**
+
+**Business insight: as we already know, the age of most customers is between 20 to 35. However, in some years the age of top customers was in the range of 40s. Next, we try to explore the age range of the most valuable customers. To do this, we consider the average age of the top 15% each year.**
+
+```
+with t_1 as (select sum(amount) as sum_paid,extract(year from (date)) as year,
+             customer_id
+from payments 
+         where    extract(year from (date))>2013
+group by year,customer_id),
+t_2 as (select  sum_paid, year, customer_id,
+        count (*) over (partition by year) as co,
+row_number() over (partition by year order by sum_paid desc) as ro 
+from t_1) ,
+t_3 as (select t.year,t.year-extract(year from (r.birth_date))
+as age 
+from t_2 t
+join riders r
+on r.id=t.customer_id 
+where ro::numeric/co<=0.2)
+select year, avg(age) as average_year
+from t_3 
+group by 1
+```
+ year |  average_year top 15% | 
+| :--- |     :---: |  
+2014|25.34
+2015	| 26.8
+2016|	27.66
+2017|	28.66
+2018	|29.57
+2019	|30.46	|41
+2020	|31.5
+2021|	32.43
+
 ## Advanced Analytics: 
 In this section, based on customers’ purchase behaviors’, we predict how many purchases each customer will do over the next 6 months, and calculate the expected profit for each customer. To end this, we leverage BG-NBD and Gamma-Gamma Models, which are statistical models (https://brucehardie.com/notes/004/bgnbd_spreadsheet_note.pdf). 
 
