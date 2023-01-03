@@ -225,7 +225,7 @@ as age
 from t_2 t
 join riders r
 on r.id=t.customer_id 
-where ro::numeric/co<=0.2)
+where ro::numeric/co<=0.15)
 select year, avg(age) as average_year
 from t_3 
 group by 1
@@ -243,7 +243,7 @@ group by 1
 
 **Business insight: From the above table, over recent years, the average age of the top 15% of customers is between 29-32 years.**
 ## Advanced Analytics: 
-In this section, based on customers’ purchase behaviors’, we predict how many purchases each customer will do over the next 6 months, and calculate the expected profit for each customer. To end this, we leverage BG-NBD and Gamma-Gamma Models, which are statistical models (https://brucehardie.com/notes/004/bgnbd_spreadsheet_note.pdf). 
+In this section, based on customers’ purchase behaviors, we predict how many purchases each customer will do over the next 6 months, and calculate the expected profit for each customer. To end this, we leverage BG-NBD and Gamma-Gamma Models, which are statistical models (https://brucehardie.com/notes/004/bgnbd_spreadsheet_note.pdf). 
 
 The BG-NBD model models each customer’s purchase behaviors’ distribution and predict the expected number of purchases for each customer.  The model requires three pieces of information about each customer’s past
 purchasing history:his “recency” (when his last transaction occurred), “frequency” (how many transactions he made in a specified time period), and
